@@ -9,7 +9,8 @@ var Task = function(options){
       this.status = 'incomplete'
     }
   };
-
-  var tasks = [];
-  var completeTasks = _.filter(tasks, (task.status === 'complete'));
-}
+};
+$('#taskInput').submit( function(event){
+  console.log('submitted');
+  event.preventDefault();
+});
