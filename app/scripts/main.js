@@ -10,7 +10,12 @@ var Task = function(options){
     }
   };
 };
-$('#taskInput').submit( function(event){
+
+
+var task = $('#taskInput').submit( function(event){
   console.log('submitted');
   event.preventDefault();
+
+  var newtask = $('#input_task').val();
+  console.log(newtask);
 });
