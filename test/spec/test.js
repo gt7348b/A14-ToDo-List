@@ -3,10 +3,22 @@
 (function () {
   'use strict';
 
-  describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
+  describe('Task Object', function () {
+    describe('Here the task', function () {
+      var task;
 
+      beforeEach(function(){
+        task = new Task();
+      });
+
+
+      it('should be an instance of ', function(){
+
+      //  var task = new Task();
+        expect(task).to.be.an.instanceof(Task);
+
+
+      });
       });
     });
   });
