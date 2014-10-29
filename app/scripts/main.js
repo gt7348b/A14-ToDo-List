@@ -70,9 +70,38 @@ $('#taskInput').submit( function(event){
 });
 
 
-var num_items = $(list_to_do).length;
-console.log(num_items);
+// Click item
 
+
+var status_change;
+
+$('#items').on('click', 'li', function(event){
+    event.preventDefault();
+
+    var self = this;
+
+    var id = $(this).attr('id');
+
+    status_change = _.findWhere(list_to_do, { _id: id });
+    console.log(status_change);
+
+    if (status_change.status === 'complete') {
+    status_change.status = 'incomplete';
+    $(self).removeClass('done');
+  } else {
+    status_change.status = 'complete';
+    $(self).addClass('done');
+  }
+
+  $.ajax({
+    type: 'PUT',
+    url: server + '/' + status_change._id,
+    data: status_change
+
+  });
+
+  console.log(status_change);
+});
 
 // Delete Items
 

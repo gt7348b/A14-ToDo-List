@@ -46,21 +46,21 @@
     });
   });
 
-  describe('This is the number of tasks array', function(){
-    var task;
-
-    beforeEach(function(){
-      task = new Task();
-    });
-
-    //all
-    var tasks = [];
-    //complete
-    var completedTasks;
-
-    it('Completed tasks array length', function (){
-    expect(completedTasks.length).to.equal(_.filter(tasks,(task.status === 'complete')));
-    });
-  });
+  // describe('This is the number of tasks array', function(){
+  //   var task;
+  //
+  //   beforeEach(function(){
+  //     task = new Task();
+  //   });
+  //
+  //   //all
+  //   var tasks = [];
+  //   //complete
+  //   var completedTasks;
+  //
+  //   it('Completed tasks array length', function (){
+  //   expect(completedTasks.length).to.equal(_.filter(tasks,(task.status === 'complete')));
+  //   });
+  // });
 
 })();
