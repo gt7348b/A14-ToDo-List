@@ -43,7 +43,7 @@
             </div> -->
           </div>
           <ul id='items' class="list_items">
-          
+
           </ul>
         </div>
     </div>
@@ -56,8 +56,12 @@
     <div id='com_items' class='complete'>
     </div>
 
-    <script id='add_task' type='text/template'><!-- Players life template -->
-      <li><%= task.name %><span class='delete_btn'>  X</span></li>
+    <script id='existing' type='text/template'>
+      <li> <%= task %><span class='delete_btn'>  X</span></li>
+    </script>
+
+    <script id='add_task' type='text/template'>
+      <li> <%= name %><span class='delete_btn'>  X</span></li>
     </script>
 
     <script id='total' type='text/template'>

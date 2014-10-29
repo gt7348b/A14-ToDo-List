@@ -4,17 +4,16 @@ var Task = function(options){
   this.status = options.status || 'incomplete';
   this.click = function(){
     if(this.status === 'incomplete'){
-      this.status = 'complete'
+      this.status = 'complete';
     } else if (this.status === 'complete'){
-      this.status = 'incomplete'
+      this.status = 'incomplete';
     }
   };
 };
 
 
-
-
-var render_task = _.template($('#add_task').html()),
+var render_existing = _.template($('#existing').html()),
+    render_task = _.template($('#add_task').html()),
     render_tot = _.template($('#total').html()),
     render_com = _.template($('#complete').html()),
     task,
@@ -22,14 +21,21 @@ var render_task = _.template($('#add_task').html()),
     server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo';
     console.log(list_to_do);
 
+$.getJSON(server).done(function(items){
+  console.log(items);
+
+    list_to_do = items;
+
+    _.each(items, function(todo){
+    $('#items').append(render_task(todo));
+  });
+
+});
 
 
 $('#taskInput').submit( function(event){
   //console.log('submitted');
   event.preventDefault();
-
-
-  var item = this;
 
   event.name = $('#input_task').val();
   //console.log(event.name);
@@ -59,7 +65,7 @@ $('#taskInput').submit( function(event){
   $('.total').append(render_tot(num_items));
 document.getElementById("taskInput").reset();
   return list_to_do;
-  return num_items;
+  //return num_items;
 
 });
 
