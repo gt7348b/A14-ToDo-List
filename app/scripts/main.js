@@ -11,11 +11,20 @@ var Task = function(options){
   };
 };
 
+var render_task = _.template($('#add_task').html()),
+    task;
 
-var task = $('#taskInput').submit( function(event){
-  console.log('submitted');
+
+$('#taskInput').submit( function(event){
+  //console.log('submitted');
   event.preventDefault();
 
-  var newtask = $('#input_task').val();
-  console.log(newtask);
+  event.name = $('#input_task').val();
+  console.log(event.name);
+
+  task = new Task(event);
+  console.log(task);
+
+  $('.list_items').append(render_task(task));
+
 });
