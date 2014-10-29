@@ -5,8 +5,10 @@ var Task = function(options){
   this.click = function(){
     if(this.status === 'incomplete'){
       this.status = 'complete';
+      console.log(this);
     } else if (this.status === 'complete'){
       this.status = 'incomplete';
+      console.log(this);
     }
   };
 };
