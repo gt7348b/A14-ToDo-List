@@ -34,10 +34,15 @@
         <div class="list_container">
           <div class="list-title">
             <form id="taskInput"  action="index.html" method="post">
-              todo:<input type="text" placeholder=" today i need to...">
+              todo:<input id='input_task' type="text" placeholder=" today i need to...">
             </form>
+          <!--  <div class = 'create_button'>
+              <span class="btnCon">
+                <button id="button">Create New Task!</button>
+              </span>
+            </div> -->
           </div>
-          <ul class="list_items">
+          <ul id='items' class="list_items">
             <li>a thing</li>
             <li>another thing</li>
             <li>something else</li>
@@ -46,7 +51,27 @@
         </div>
     </div>
 
+    <!-- Displays Total Tasks to do -->
+    <div id='tot_items' class='total'>
+    </div>
 
+    <!-- Displays Completed to do tasks -->
+    <div id='com_items' class='complete'>
+    </div>
+
+    <script id='add_task' type='text/template'><!-- Players life template -->
+      <li><%= task.name %><span class='delete_btn'>  X</span></li>
+    </script>
+
+    <script id='total' type='text/template'>
+            <p class='num'><%= num_items %></p>Total Tasks
+    </script>
+
+    <script id='complete' type='text/template'>
+            <p class='num'><%= com_tasks %></p>Tasks Complete
+    </script>
+
+    <!-- Displays Total Tasks to do -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>

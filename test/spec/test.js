@@ -30,6 +30,18 @@
         task.click(task);
         expect(task.status).to.equal('complete');
 
+      beforeEach(function(){
+        task = new Task();
+      });
+
+
+      it('should be an instance of ', function(){
+
+      //  var task = new Task();
+        expect(task).to.be.an.instanceof(Task);
+
+
+      });
       });
     });
   });
