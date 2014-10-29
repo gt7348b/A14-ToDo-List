@@ -12,8 +12,7 @@ var Task = function(options){
 };
 
 
-var render_existing = _.template($('#existing').html()),
-    render_task = _.template($('#add_task').html()),
+var render_task = _.template($('#add_task').html()),
     render_tot = _.template($('#total').html()),
     render_com = _.template($('#complete').html()),
     task,
@@ -52,23 +51,40 @@ $('#taskInput').submit( function(event){
       $('.list_items').append(render_task(thisitem));
       list_to_do.push(thisitem);
       console.log(list_to_do);
-      //$.push(list_src, list_to_do);
 
   });
 
-
-
-
-  var num_items = $(list_to_do).length;
-  console.log(num_items);
-
   $('.total').append(render_tot(num_items));
 document.getElementById("taskInput").reset();
-  return list_to_do;
-  //return num_items;
 
 });
 
 
 var num_items = $(list_to_do).length;
 console.log(num_items);
+
+
+// Delete Items
+
+var item_delete;
+
+$('#items').on('click', 'span', function(click){
+  event.preventDefault();
+
+  var id = $(this).attr('id');
+  console.log(id);
+
+  item_delete = _.findWhere(list_to_do, { _id: id});
+
+  $.ajax({
+    type: 'DELETE',
+    url:  server + '/' + item_delete._id,
+    data: item_delete
+  });
+
+_.each(list_to_do, function(todo){
+$('#items').append(render_task(todo));
+});
+
+
+});
