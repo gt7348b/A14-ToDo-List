@@ -19,7 +19,7 @@ var render_task = _.template($('#add_task').html()),
     render_com = _.template($('#complete').html()),
     task,
     list_to_do = [],
-    server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo',
+    server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo';
     console.log(list_to_do);
 
 
