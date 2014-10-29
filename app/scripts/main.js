@@ -80,11 +80,21 @@ $('#items').on('click', 'span', function(click){
     type: 'DELETE',
     url:  server + '/' + item_delete._id,
     data: item_delete
+  }).done(function(){
+    location.reload(true);
   });
 
-_.each(list_to_do, function(todo){
-$('#items').append(render_task(todo));
-});
+  //location.reload(true);
+  //$.getJSON(server).done(function(items){
+    //console.log(items);
+
+    //  list_to_do = items;
+
+      //_.each(items, function(todo){
+      //$('#items').append(render_task(todo));
+    //});
+
+//  });
 
 
 });
