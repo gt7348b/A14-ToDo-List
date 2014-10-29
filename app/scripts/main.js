@@ -34,6 +34,7 @@ $.getJSON(server).done(function(items){
 
     com_items = completed.length;
 
+
     _.each(items, function(name){
     $('#items').append(render_task(name));
     console.log(name.status);
@@ -42,6 +43,7 @@ $.getJSON(server).done(function(items){
       //console.log(todo._id);
       //$("#" + todo._id).addClass('.done');
     //}
+
   });
 
     console.log(tot_items);
