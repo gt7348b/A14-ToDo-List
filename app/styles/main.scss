@@ -4,7 +4,7 @@
 $item_color: HSLA(203, 10%, 54%, 1);
 // Custom Styles
 body{
-    background-color:HSLA(204, 10%, 28%, 1);
+    //background-color:HSLA(204, 10%, 28%, 1);
     .container:{
       margin:0 auto;
     }
@@ -13,6 +13,8 @@ body{
 
   display: block;
   width: 25%;
+  border-style:solid;
+  border-color:$item_color;
 
 
 
@@ -22,7 +24,7 @@ body{
     margin:0;
     background-color:$item_color;
     margin-bottom:2px;
-    margin-top:2px;
+    //margin-top:2px;
     //border-radius:15px;
     font-size:25px;
 
@@ -46,6 +48,7 @@ body{
       opacity: .7;
       font-size:25px;
       height:40px;
+      padding-top: 7px;
       &:hover{
         opacity:1;
 
@@ -63,7 +66,7 @@ body{
           margin-top: 5px;
           float: right;
           text-align: center;
-          padding-top: 1px;
+          //padding-top: 1px;
           color: HSLA(204, 9%, 46%, 1);
           opacity: .7;
           &:hover{
