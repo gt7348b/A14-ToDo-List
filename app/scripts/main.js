@@ -16,7 +16,7 @@ var render_task = _.template($('#add_task').html()),
     render_com = _.template($('#complete').html()),
     task,
     list_to_do = [],
-    list_src = 'scripts/todo.js';
+    server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo',
     console.log(list_to_do);
 
 
@@ -24,16 +24,28 @@ $('#taskInput').submit( function(event){
   //console.log('submitted');
   event.preventDefault();
 
+  var item = this;
+
   event.name = $('#input_task').val();
-  console.log(event.name);
+  //console.log(event.name);
 
   task = new Task(event);
-  console.log(task);
+  //console.log(task);
 
-  $('.list_items').append(render_task(task));
-  list_to_do.push(task);
-  console.log(list_to_do);
-  //$.push(list_src, list_to_do);
+  $.ajax({
+    type: 'POST',
+    url:  server,
+    data: task
+
+  }).done(function(thisitem){
+      $('.list_items').append(render_task(thisitem));
+      list_to_do.push(thisitem);
+      console.log(list_to_do);
+      //$.push(list_src, list_to_do);
+
+  });
+
+
 
   var num_items = $(list_to_do).length;
   console.log(num_items);
