@@ -40,7 +40,7 @@ $.getJSON(server).done(function(items){
 
     if(todo.status == 'complete'){
       console.log(todo._id);
-      $("#" + todo._id).addClass('done');
+      $("#" + todo._id).addClass('.done');
     }
   });
 
