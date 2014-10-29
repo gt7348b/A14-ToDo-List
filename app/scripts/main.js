@@ -28,6 +28,8 @@ $('#taskInput').submit( function(event){
   //console.log('submitted');
   event.preventDefault();
 
+
+
   event.name = $('#input_task').val();
   console.log(event.name);
 
@@ -39,13 +41,15 @@ $('#taskInput').submit( function(event){
   console.log(list_to_do);
   //$.push(list_src, list_to_do);
 
+
   var num_items = $(list_to_do).length;
   console.log(num_items);
 
   $('.total').append(render_tot(num_items));
-
+document.getElementById("taskInput").reset();
   return list_to_do;
   return num_items;
+
 });
 
 
