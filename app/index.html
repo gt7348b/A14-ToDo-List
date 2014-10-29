@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
-
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+<link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -59,7 +57,9 @@
 
     <script id='add_task' type='text/template'>
       <% if(status == 'complete') { %>
-        <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
+
+        <li id="<%= _id %>"> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
+
       <% }else{ %>
         <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
         <% } %>
