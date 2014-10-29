@@ -1,7 +1,7 @@
 var Task = function(options){
   options = options || {};
   this.name = options.name;
-  this.status = options.status || 'incomplete';
+  this.status = 'incomplete';
   this.click = function(){
     if(this.status === 'incomplete'){
       this.status = 'complete';
@@ -16,10 +16,11 @@ var Task = function(options){
 
 var render_task = _.template($('#add_task').html()),
     render_tot = _.template($('#total').html()),
-    render_com = _.template($('#complete').html()),
+    //render_com = _.template($('#complete').html()),
     task,
     list_to_do = [],
     num_items,
+    completed,
     com_items,
     server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo';
 
@@ -31,13 +32,22 @@ $.getJSON(server).done(function(items){
 
     num_items = list_to_do.length;
 
+    completed = list_to_do.filter(function(list_to_do){
+        if(list_to_do.status === 'complete'){
+          return list_to_do};
+        });
+
+    console.log(completed);
+
+    com_items = completed.length;
+
     _.each(items, function(todo){
     $('#items').append(render_task(todo));
   });
 
     console.log(tot_items);
     $('#tot_items').append(render_tot(num_items));
-
+    //$('#com_items').append(render_com(com_items));
 });
 
 
@@ -87,10 +97,10 @@ $('#items').on('click', 'li', function(event){
 
     if (status_change.status === 'complete') {
     status_change.status = 'incomplete';
-    $(self).removeClass('done');
+    $('li').removeClass('done');
   } else {
     status_change.status = 'complete';
-    $(self).addClass('done');
+    $('li').addClass('done');
   }
 
   $.ajax({
@@ -101,6 +111,19 @@ $('#items').on('click', 'li', function(event){
   });
 
   console.log(status_change);
+
+  num_items = list_to_do.length;
+
+    completed = list_to_do.filter(function(list_to_do){
+        if(list_to_do.status === 'complete'){
+          return list_to_do};
+        });
+
+    console.log(completed);
+
+    com_items = completed.length;
+      console.log(num_items);
+      $('#tot_items').html(render_tot(num_items));
 });
 
 // Delete Items

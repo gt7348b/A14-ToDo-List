@@ -59,18 +59,14 @@
 
     <script id='add_task' type='text/template'>
       <% if(status == 'complete') { %>
-        <li id="<%= _id %>"> <%= name %><span id="<%= _id %>" class='delete_btn done'>  X</span></li>
+        <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
       <% }else{ %>
-        <li id="<%= _id %>"> <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
+        <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
         <% } %>
     </script>
 
     <script id='total' type='text/template'>
-            <p class='num'> <%= num_items %>  Total Tasks</p>
-    </script>
-
-    <script id='complete' type='text/template'>
-            <p class='num'><%= com_tasks %></p>Tasks Complete
+            <p class='num'><%= com_items %>   out of   <%= num_items %>  Total Tasks Completed</p>
     </script>
 
     <!-- Displays Total Tasks to do -->
