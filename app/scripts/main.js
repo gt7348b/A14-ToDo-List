@@ -12,7 +12,9 @@ var Task = function(options){
 };
 
 var render_task = _.template($('#add_task').html()),
-    task;
+    task,
+    list_to_do = [];
+    console.log(list_to_do);
 
 
 $('#taskInput').submit( function(event){
@@ -26,5 +28,12 @@ $('#taskInput').submit( function(event){
   console.log(task);
 
   $('.list_items').append(render_task(task));
+  list_to_do.push(task);
+  console.log(list_to_do);
 
+  return list_to_do;
 });
+
+
+var num_items = $('.list_items').length;
+console.log(num_items);
