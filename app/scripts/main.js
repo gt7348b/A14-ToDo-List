@@ -10,6 +10,8 @@ var Task = function(options){
     }
   };
 };
+
+var tasks = [];
 $('#taskInput').submit( function(event){
   console.log('submitted');
   event.preventDefault();
