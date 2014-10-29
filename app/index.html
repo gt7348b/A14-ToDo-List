@@ -49,17 +49,13 @@
     </div>
 
     <!-- Displays Total Tasks to do -->
-  <!--  <div id='tot_items' class='total'>
-  </div>-->
+    <div id='tot_items' class='total'>
+    </div>
 
     <!-- Displays Completed to do tasks -->
     <div id='com_items' class='complete'>
     </div>
 
-
-    <script id='existing' type='text/template'>
-      <li id="<%= _id %>"> <%= task %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
-    </script>
 
     <script id='add_task' type='text/template'>
       <% if(status == 'complete') { %>
@@ -67,11 +63,10 @@
       <% }else{ %>
         <li id="<%= _id %>"> <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
         <% } %>
-
     </script>
 
     <script id='total' type='text/template'>
-            <p class='num'><%= num_items %></p>Total Tasks
+            <p class='num'> <%= num_items %>  Total Tasks</p>
     </script>
 
     <script id='complete' type='text/template'>

@@ -19,17 +19,24 @@ var render_task = _.template($('#add_task').html()),
     render_com = _.template($('#complete').html()),
     task,
     list_to_do = [],
+    num_items,
+    com_items,
     server = 'http://tiy-atl-fe-server.herokuapp.com/collections/mjtodo';
-    console.log(list_to_do);
+
 
 $.getJSON(server).done(function(items){
   console.log(items);
 
     list_to_do = items;
 
+    num_items = list_to_do.length;
+
     _.each(items, function(todo){
     $('#items').append(render_task(todo));
   });
+
+    console.log(tot_items);
+    $('#tot_items').append(render_tot(num_items));
 
 });
 
@@ -52,12 +59,13 @@ $('#taskInput').submit( function(event){
   }).done(function(thisitem){
       $('.list_items').append(render_task(thisitem));
       list_to_do.push(thisitem);
-      console.log(list_to_do);
+
+      num_items = list_to_do.length;
+
+      console.log(num_items);
+      $('#tot_items').html(render_tot(num_items));
 
   });
-
-  $('.total').append(render_tot(num_items));
-document.getElementById("taskInput").reset();
 
 });
 
