@@ -29,6 +29,12 @@ $.getJSON(server).done(function(items){
 
     _.each(items, function(todo){
     $('#items').append(render_task(todo));
+    console.log(todo.status);
+
+    if(todo.status == 'complete'){
+      console.log(todo._id);
+      $("#" + todo._id).addClass('done');
+    }
   });
 
 });
