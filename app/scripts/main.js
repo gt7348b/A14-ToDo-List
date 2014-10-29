@@ -2,15 +2,8 @@ var Task = function(options){
   options = options || {};
   this.name = options.name;
   this.status = 'incomplete';
-  this.click = function(){
-    if(this.status === 'incomplete'){
-      this.status = 'complete';
-      console.log(this);
-    } else if (this.status === 'complete'){
-      this.status = 'incomplete';
-      console.log(this);
-    }
-  };
+
+
 };
 
 
@@ -80,6 +73,7 @@ $('#taskInput').submit( function(event){
 
       console.log(num_items);
       $('#tot_items').html(render_tot(num_items));
+      document.getElementById('#inputTask').reset();
 
   });
 
@@ -103,10 +97,10 @@ $('#items').on('click', 'li', function(event){
 
     if (status_change.status === 'complete') {
     status_change.status = 'incomplete';
-    $('li').removeClass('done');
+    $('#' + status_change._id).removeClass('done');
   } else {
     status_change.status = 'complete';
-    $('li').addClass('done');
+    $('#' + status_change._id).addClass('done');
   }
 
   $.ajax({

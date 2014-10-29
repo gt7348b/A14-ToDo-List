@@ -58,10 +58,10 @@
     <script id='add_task' type='text/template'>
       <% if(status == 'complete') { %>
 
-        <li id="<%= _id %>"> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
+        <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
 
       <% }else{ %>
-        <li id="<%= _id %>" class='done'> <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
+        <li id="<%= _id %>" > <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
         <% } %>
     </script>
 
