@@ -1,24 +1,24 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
-$item_color: HSLA(203, 10%, 54%, 1);
+$item_color: HSLA(208, 9%, 37%, 1);
 // Custom Styles
 body{
-    //background-color:$item_color;
+    background-color:HSLA(210, 10%, 19%, 1);
     .container:{
       margin:0 auto;
 
     }
 }
 .list_container{
-
-  display: block;
-  width: 35%;
-  //border-style:solid;
-  //border-color:$item_color;
-  margin:0 auto;
-
-
+display: block;
+width: 35%;
+margin: 0 auto;
+background-color: HSLA(217, 20%, 83%, 1);
+overflow-x: hidden;
+overflow-y: auto;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
 
 
   .list-title{
@@ -31,11 +31,25 @@ body{
     //border-radius:15px;
     font-size:30px;
     font-family: 'Play', sans-serif;
+    overflow:auto;
+    span{
+      background-color: orange;
+      display: inline-block;
+      height: 80px;
+      width: 80px;
+      margin: 0;
+      border-radius: 50px;
+      float: left;
+      margin: 10px;
+      padding-top: 19px;
+      font-weight: bold;
+      color:$item_color;
+    }
     input{
-      margin-bottom:10px;
-      margin-top:10px;
-      margin-left:5px;
-      //border-radius: 10px;
+      margin-bottom: 10px;
+      margin-top: 28px;
+      margin-left: 5px;
+      float: left;
     }
   }
   ul{
@@ -44,20 +58,20 @@ body{
     margin-bottom:0;
     li{
       list-style: none;
-      background-color: $item_color;
+      background-color: HSLA(208, 9%, 37%, 1);
       margin-top: 10px;
-      //margin-bottom: 1px;
-      //border-radius: 10px;
-      //margin:0;
+      margin-left: -5px;
       padding-left: 10px;
-      opacity: .7;
-      font-size:25px;
+      opacity: .5;
+      font-size: 25px;
       font-family: 'Play', sans-serif;
-      height:40px;
+      height: 40px;
       padding-top: 7px;
       border-style: solid;
-      border-width:2px;
-      border-color:$item_color;
+      border-width: 2px;
+      border-color: HSLA(208, 9%, 37%, 1);
+      cursor: default;
+      width: 680px;
 
       &:hover{
         opacity:1;
@@ -91,4 +105,10 @@ body{
 }
 .total{
   float:left;
+  margin-left:15px;
+  font-family: 'Play', sans-serif;
+  .num{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

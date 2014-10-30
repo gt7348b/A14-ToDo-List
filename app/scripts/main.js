@@ -34,16 +34,14 @@ $.getJSON(server).done(function(items){
 
     com_items = completed.length;
 
+    _.each(items, function(todo){
+    $('#items').append(render_task(todo));
+    console.log(todo.status);
 
-    _.each(items, function(name){
-    $('#items').append(render_task(name));
-    console.log(name.status);
-
-    //if(todo.status == 'complete'){
-      //console.log(todo._id);
-      //$("#" + todo._id).addClass('.done');
-    //}
-
+    if(todo.status == 'complete'){
+      console.log(todo._id);
+      //$("#" + todo._id).addClass('done');
+    }
   });
 
     console.log(tot_items);
