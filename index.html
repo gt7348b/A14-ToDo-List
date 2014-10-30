@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>A14ToDo</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+<link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+<title>todo list:</title>
+  </head>
+  <body>
+    <div class="header">
+
+    </div>
+
+    <div class="container">
+        <div class="list_container">
+          <div class="list-title">
+            <form id="taskInput"  action="index.html" method="post">
+              <span>todo:</span><input id='input_task' type="text" placeholder=" today i need to...">
+            </form>
+          <!--  <div class = 'create_button'>
+              <span class="btnCon">
+                <button id="button">Create New Task!</button>
+              </span>
+            </div> -->
+          </div>
+          <ul id='items' class="list_items">
+
+          </ul>
+          <div id='tot_items' class='total'>
+          </div>
+        </div>
+    </div>
+
+    <!-- Displays Total Tasks to do -->
+
+
+    <!-- Displays Completed to do tasks -->
+    <div id='com_items' class='complete'>
+    </div>
+
+
+    <script id='add_task' type='text/template'>
+      <% if(status == 'complete') { %>
+
+        <li class='done' id="<%= _id %>"> <%= name %><span id="<%= _id %>" class='delete_btn'>  X</span></li>
+
+      <% }else{ %>
+        <li id="<%= _id %>" > <%= name %><span id="<%= _id %>"class='delete_btn'>  X</span></li>
+        <% } %>
+    </script>
+
+    <script id='total' type='text/template'>
+            <p class='num'><%= com_items %>   out of   <%= num_items %>  Total Tasks Completed</p>
+    </script>
+
+    <!-- Displays Total Tasks to do -->
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
