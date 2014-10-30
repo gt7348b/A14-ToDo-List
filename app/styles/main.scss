@@ -62,9 +62,7 @@ body{
       &:hover{
         opacity:1;
 
-      }
-      .done{
-        background-color:blue;
+
       }
             .delete_btn{
           height: 30px;
@@ -85,7 +83,9 @@ body{
             color:black;
           }
       }
-
+      .done{
+        color:blue;
+    }
     }
   }
 }
