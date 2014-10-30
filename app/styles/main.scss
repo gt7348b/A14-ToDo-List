@@ -4,21 +4,22 @@
 $item_color: HSLA(208, 9%, 37%, 1);
 // Custom Styles
 body{
-    background-color:HSLA(210, 10%, 19%, 1);
+    //background-color:HSLA(210, 10%, 19%, 1);
     .container:{
       margin:0 auto;
-
     }
 }
 .list_container{
-display: block;
-width: 35%;
-margin: 0 auto;
-background-color: HSLA(217, 20%, 83%, 1);
-overflow-x: hidden;
-overflow-y: auto;
-border-bottom-left-radius: 15px;
-border-bottom-right-radius: 15px;
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    background-color: HSLA(217, 20%, 83%, 1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    //border-style:solid;
+    //border-color:$item_color;
 
 
   .list-title{
